@@ -1,0 +1,110 @@
+<div style="font-family: Poppins, sans-serif; padding: 16px; max-width: 800px; margin: auto;">
+
+  <!-- Header -->
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <div style="width: 58px; height: 58px; border-radius: 14px; background: #0A74DA; color: #fff;
+                display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700;">
+      BC
+    </div>
+    <div>
+      <div style="font-size: 22px; font-weight: 700;">Bharat Clinic</div>
+      <div style="font-size: 14px; color: #555;">
+        Dr. Dinesh Tripathi — Unani & Ayurvedic Consultant
+      </div>
+    </div>
+  </div>
+
+  <!-- Headline -->
+  <h2 style="margin-top: 18px; color: #0A74DA; font-size: 26px; line-height: 1.2;">
+    Trusted doctor consultation — private & quick
+  </h2>
+
+  <p style="color: #444; font-size: 15px; margin-top: -6px;">
+    Online consultation & guided treatment. Secure, discreet & fast response.
+  </p>
+
+  <!-- Benefits -->
+  <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px;">
+    <div style="background: #fff; padding: 12px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.06);">
+      <b>Same day consultation</b><br>
+      <small style="color: #555;">Quick response on WhatsApp</small>
+    </div>
+    <div style="background: #fff; padding: 12px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.06);">
+      <b>Experienced consultant</b><br>
+      <small style="color: #555;">Guided support for your health</small>
+    </div>
+    <div style="background: #fff; padding: 12px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.06);">
+      <b>Private & secure</b><br>
+      <small style="color: #555;">Your details stay confidential</small>
+    </div>
+  </div>
+
+  <!-- Clinic Photo -->
+  <div style="margin-top: 18px;">
+    <img src="https://lh3.googleusercontent.com/d/1RXY7MCFeFO2M08o4YpZ45_hB9RJUu-Tr=s1200"
+         style="width: 100%; border-radius: 12px; box-shadow: 0px 6px 18px rgba(0,0,0,0.08);" />
+  </div>
+
+  <!-- CONSULTATION FORM -->
+  <h3 style="margin-top: 26px;">Book a consultation</h3>
+
+  <form id="leadForm" style="display: flex; flex-direction: column; gap: 12px;">
+
+    <input id="name" placeholder="Full Name" required
+           style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;">
+
+    <input id="mobile" placeholder="Mobile Number" required
+           style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;">
+
+    <textarea id="problem" placeholder="Describe your problem" required
+              style="padding: 12px; border-radius: 10px; border: 1px solid #ccc; height: 80px;"></textarea>
+
+    <input id="address" placeholder="City / Address"
+           style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;">
+
+    <button type="submit"
+            style="background: #0A74DA; color: #fff; font-weight: 600;
+                   padding: 12px; border-radius: 10px; border: none; font-size: 16px;">
+      Get Consultation
+    </button>
+  </form>
+
+  <p style="font-size: 12px; color: #777; margin-top: 6px;">
+    By submitting, you consent to be contacted on WhatsApp.
+  </p>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a id="wbtn" 
+     href="https://wa.me/919582479009"
+     style="position: fixed; bottom: 20px; right: 20px;
+            background: #25D366; width: 58px; height: 58px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            z-index: 999;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+         style="width: 32px; height: 32px;" />
+  </a>
+
+</div>
+
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let data = {
+    name: document.getElementById("name").value,
+    mobile: document.getElementById("mobile").value,
+    problem: document.getElementById("problem").value,
+    address: document.getElementById("address").value
+  };
+
+  let msg =
+    "Hello, I want a consultation.%0A" +
+    "Name: " + data.name + "%0A" +
+    "Mobile: " + data.mobile + "%0A" +
+    "Problem: " + data.problem + "%0A" +
+    "Address: " + data.address;
+
+  window.open("https://wa.me/919582479009?text=" + msg, "_blank");
+});
+</script>
